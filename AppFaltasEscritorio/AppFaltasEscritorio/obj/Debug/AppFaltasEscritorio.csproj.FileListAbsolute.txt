@@ -1,0 +1,16 @@
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\bin\Debug\AppFaltasEscritorio.exe.config
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\bin\Debug\AppFaltasEscritorio.exe
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\bin\Debug\AppFaltasEscritorio.pdb
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.csproj.AssemblyReference.cache
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.csproj.SuggestedBindingRedirects.cache
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.LoginForm.resources
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.Properties.Resources.resources
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.csproj.GenerateResource.cache
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.csproj.CoreCompileInputs.cache
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.exe
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.pdb
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.MainForm.resources
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.MantenimientoGuardiasForm.resources
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mrmix\Desktop\Repositorio Escritorio\ProyectoAppEscritorio\AppFaltasEscritorio\AppFaltasEscritorio\obj\Debug\AppFaltasEscritorio.csproj.CopyComplete
