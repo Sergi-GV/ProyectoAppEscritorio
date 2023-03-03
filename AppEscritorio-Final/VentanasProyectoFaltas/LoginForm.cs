@@ -1,4 +1,4 @@
-﻿using AppFaltasEscritorio.Clases;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +9,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VentanasProyectoFaltas.Modelo;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AppFaltasEscritorio
 {
@@ -21,7 +23,8 @@ namespace AppFaltasEscritorio
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            List<Profesor> p = await Herramientas.LoginAdmin(txtUsuario.Text, CreateMD5(txtContra.Text));
+            string pass = encriptar(txtContra.Text);
+            List<profesores> p = await Herramientas.LoginAdmin(txtUsuario.Text, pass);
             if (p != null)
             {
                 MainForm mainForm = new MainForm(p[0]);
@@ -35,26 +38,25 @@ namespace AppFaltasEscritorio
             }
         }
 
-        public static string CreateMD5(string input)
+        private static string encriptar(string contra)
         {
+            MD5 md5 = new MD5CryptoServiceProvider();
 
-            // Create an instance of the MD5 algorithm
-            MD5 md5 = MD5.Create();
-
-            // Convert the input string to a byte array
-            byte[] inputBytes = Encoding.ASCII.GetBytes(input);
-
-            // Compute the MD5 hash of the input byte array
-            byte[] hashBytes = md5.ComputeHash(inputBytes);
-
-            // Convert the hash byte array to a hexadecimal string
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hashBytes.Length; i++)
+            if (contra != "")
             {
-                sb.Append(hashBytes[i].ToString("x2"));
+                md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(contra));
+                byte[] result = md5.Hash;
+
+                StringBuilder strBuilder = new StringBuilder();
+                for (int i = 0; i < result.Length; i++)
+                {
+                     
+                    strBuilder.Append(result[i].ToString("x2"));
+                }
+
+                return strBuilder.ToString();
             }
-            string hashString = sb.ToString();
-            return hashString;
+            return null;
         }
     }
 }
