@@ -42,11 +42,11 @@ namespace VentanasProyectoFaltas
                         string[] datos;
                         profesores pSus = null;
 
-                        profesores pFalta = negocio.GetAsync<profesores>(g.ProfFaltaId.ToString()).Result;
+                        profesores pFalta = pSus = negocio.GetAsync<profesores>($"profesores/{g.ProfFaltaId}").Result;
                         if (g.ProfGuardiaId != null)
-                            pSus = negocio.GetAsync<profesores>(g.ProfGuardiaId.Value.ToString()).Result;
+                            pSus = negocio.GetAsync<profesores>($"profesores/{g.ProfGuardiaId}").Result;
                         datos = new string[] { g.Fecha.ToShortDateString(), g.Hora.ToString(), pFalta.Nombre + " " + pFalta.Ape1, "NO", g.Aula, g.Grupo, g.Estado.ToString() };
-                        if (g.ProfGuardiaId != null)
+                        if (pSus != null)
                             datos = new string[] { g.Fecha.ToShortDateString(), g.Hora.ToString(), pFalta.Nombre + " " + pFalta.Ape1, pSus.Nombre + " " + pSus.Ape1, g.Aula, g.Grupo, g.Estado.ToString() };
 
                         
@@ -99,7 +99,7 @@ namespace VentanasProyectoFaltas
         {
             if (lvFaltas.SelectedItems.Count == 0)
             {
-                guardias guardia = negocio.GetAsync<guardias>(lvFaltas.SelectedItems[0].Tag.ToString()).Result;
+                guardias guardia = negocio.GetAsync<guardias>($"guardias/{lvFaltas.SelectedItems[0].Tag.ToString()}").Result;
                 FaltasFrm falta = new FaltasFrm(guardia, admin);
                 if (falta.ShowDialog() == DialogResult.OK)
                     negocio.PostAsync("guardias", falta.DevolverFalta(), admin.apikey);
@@ -112,7 +112,7 @@ namespace VentanasProyectoFaltas
         {
             if (lvFaltas.SelectedItems.Count == 0)
             {
-                guardias g= negocio.GetAsync<guardias>(lvFaltas.SelectedItems[0].Tag.ToString()).Result;
+                guardias g= negocio.GetAsync<guardias>($"guardias/{lvFaltas.SelectedItems[0].Tag}").Result;
                 if (MessageBox.Show("¿Seguro que quieres borrar esta guardia?", "Borrar guardia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     Herramientas.AnularGuardiaAsync(g, admin.apikey);
 
