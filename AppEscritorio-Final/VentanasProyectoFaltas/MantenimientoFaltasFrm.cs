@@ -39,11 +39,19 @@ namespace VentanasProyectoFaltas
                         string[] datos;
                         profesores pSus = null;
 
+<<<<<<< HEAD:AppEscritorio-Final/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                         profesores pFalta = await Herramientas.ObtenerProfesorPorId(g.Prof_Falta);
                         if (g.Prof_hace_guardia != null)
                             pSus = await Herramientas.ObtenerProfesorPorId(g.Prof_hace_guardia.Value);
                         datos = new string[] { g.Fecha.ToShortDateString(), g.Hora.ToString(), pFalta.Nombre + " " + pFalta.Ape1, "NO", g.Aula, g.Grupo, g.Estado.ToString() };
                         if (g.Prof_hace_guardia != null)
+=======
+                        profesores pFalta = pSus = negocio.GetAsync<profesores>($"profesores/{g.ProfFaltaId}").Result;
+                        if (g.ProfGuardiaId != null)
+                            pSus = negocio.GetAsync<profesores>($"profesores/{g.ProfGuardiaId}").Result;
+                        datos = new string[] { g.Fecha.ToShortDateString(), g.Hora.ToString(), pFalta.Nombre + " " + pFalta.Ape1, "NO", g.Aula, g.Grupo, g.Estado.ToString() };
+                        if (pSus != null)
+>>>>>>> 8ba7f8c2081a614fa89b9f6a9be81edd2a9621bf:VentanasProyectoFaltas_03_03/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                             datos = new string[] { g.Fecha.ToShortDateString(), g.Hora.ToString(), pFalta.Nombre + " " + pFalta.Ape1, pSus.Nombre + " " + pSus.Ape1, g.Aula, g.Grupo, g.Estado.ToString() };
 
                         
@@ -93,8 +101,12 @@ namespace VentanasProyectoFaltas
         {
             if (lvFaltas.SelectedItems.Count > 0)
             {
+<<<<<<< HEAD:AppEscritorio-Final/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                 int id = (int)lvFaltas.SelectedItems[0].Tag;
                 guardias guardia = await Herramientas.ObtenerGuardiaPorId(id);
+=======
+                guardias guardia = negocio.GetAsync<guardias>($"guardias/{lvFaltas.SelectedItems[0].Tag.ToString()}").Result;
+>>>>>>> 8ba7f8c2081a614fa89b9f6a9be81edd2a9621bf:VentanasProyectoFaltas_03_03/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                 FaltasFrm falta = new FaltasFrm(guardia, admin);
                 //if (falta.ShowDialog() == DialogResult.OK)
                     //negocio.PostAsync("guardias", falta.DevolverFalta(), admin.apikey);
@@ -107,7 +119,11 @@ namespace VentanasProyectoFaltas
         {
             if (lvFaltas.SelectedItems.Count == 0)
             {
+<<<<<<< HEAD:AppEscritorio-Final/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                guardias g = await Herramientas.ObtenerGuardiaPorId(Convert.ToInt32(lvFaltas.SelectedItems[0].Tag.ToString()));
+=======
+                guardias g= negocio.GetAsync<guardias>($"guardias/{lvFaltas.SelectedItems[0].Tag}").Result;
+>>>>>>> 8ba7f8c2081a614fa89b9f6a9be81edd2a9621bf:VentanasProyectoFaltas_03_03/VentanasProyectoFaltas/MantenimientoFaltasFrm.cs
                 if (MessageBox.Show("¿Seguro que quieres borrar esta guardia?", "Borrar guardia", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     await Herramientas.AnularGuardiaAsync(g, admin.apikey);             
             }
